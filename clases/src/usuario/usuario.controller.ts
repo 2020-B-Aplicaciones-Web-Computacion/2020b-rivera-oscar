@@ -7,7 +7,7 @@ export class UsuarioController {
     @Get("hola")
     @HttpCode(200)
     hola(){
-        return  '<h1> hola mundo http </h1> ' +
+        return  '<h1> VIVA ESPAÑA </h1> ' +
                 '<img src = "https://estaticos.muyhistoria.es/media/cache/400x300_thumb/uploads/images/pyr/5811ef1f5cafe83a098b456d/borgona_0.jpg" alt="">'
 
 
