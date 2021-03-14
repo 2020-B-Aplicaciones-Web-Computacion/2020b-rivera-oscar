@@ -1,6 +1,8 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+
+//importaciones de mis nuevos modulos mascota y usuario
 import {MascotaModule} from './mascota/mascota.module';
 import {UsuarioModule} from './usuario/usuario.module';
 

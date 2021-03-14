@@ -6,8 +6,11 @@ import {get} from "http";
 export class UsuarioController {
     @Get("hola")
     @HttpCode(200)
-    hola(){
-        return  '<h1> VIVA ESPAÑA </h1> ' +
+    hola(
+        @Req()
+            request,
+    ){
+        return  '<h1> Hola mundo http </h1> ' +
                 '<img src = "https://estaticos.muyhistoria.es/media/cache/400x300_thumb/uploads/images/pyr/5811ef1f5cafe83a098b456d/borgona_0.jpg" alt="">'
 
 
