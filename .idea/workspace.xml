@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="055bff7e-ad25-4ef8-a08b-e0947f5e2b5b" name="Default Changelist" comment="" />
+    <list default="true" id="055bff7e-ad25-4ef8-a08b-e0947f5e2b5b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/clases/sessions/5-ekBMk094qjzQjqPzOTGgxNtwQVc70P.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clases/sessions/dBz6XXxrvVj4oO5lHSMceHz8aB3MlVJC.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clases/src/app.controller.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clases/src/app.controller.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clases/src/app.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clases/src/app.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clases/src/main.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clases/src/mascota/mascota.controller.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clases/src/mascota/mascota.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clases/src/usuario/usuario.controller.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clases/src/usuario/usuario.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clases/test/app.e2e-spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clases/test/jest-e2e.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -9,6 +24,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedIndex" value="1" />
   </component>
   <component name="ProjectId" id="1nsyuUTDd6pZ4Pp20xlPQZQ9t0g" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -25,6 +43,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="ts.external.directory.path" value="C:\Users\mm\Documents\2020-B a.k.a. FuckThisShit\Aplicaciones web\IIBIM\2020b-rivera-oscar\clases\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -37,7 +56,7 @@
       <updated>1612193318419</updated>
       <workItem from="1612193324081" duration="1602000" />
       <workItem from="1613572864360" duration="133000" />
-      <workItem from="1615691515495" duration="1676000" />
+      <workItem from="1615691515495" duration="2728000" />
     </task>
     <servers />
   </component>
