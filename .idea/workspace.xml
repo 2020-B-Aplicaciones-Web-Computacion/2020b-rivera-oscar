@@ -2,19 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="055bff7e-ad25-4ef8-a08b-e0947f5e2b5b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/clases/sessions/5-ekBMk094qjzQjqPzOTGgxNtwQVc70P.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/clases/sessions/dBz6XXxrvVj4oO5lHSMceHz8aB3MlVJC.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/clases/src/app.controller.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/clases/src/app.controller.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/clases/src/app.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/clases/src/app.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/clases/src/main.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/clases/src/mascota/mascota.controller.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/clases/src/mascota/mascota.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/clases/src/usuario/usuario.controller.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/clases/src/usuario/usuario.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/clases/test/app.e2e-spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/clases/test/jest-e2e.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -56,7 +43,7 @@
       <updated>1612193318419</updated>
       <workItem from="1612193324081" duration="1602000" />
       <workItem from="1613572864360" duration="133000" />
-      <workItem from="1615691515495" duration="2728000" />
+      <workItem from="1615691515495" duration="3576000" />
     </task>
     <servers />
   </component>
