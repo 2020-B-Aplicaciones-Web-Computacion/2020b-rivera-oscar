@@ -1,0 +1,25 @@
+<h1><%= '¿ESTÁ SEGURO QUE QUIERE ELIMINAR EL SIGUIENTE REGISTRO?' %></h1>
+
+
+<form action="/fabricanteCarro/eliminar-fabricanteCarro?id=<%=fabricanteCarro.id%>&nfabricante=<%=fabricanteCarro.nfabricante%>&tipo=<%=fabricanteCarro.tipo%>&sede=<%=fabricanteCarro.sede%>&presidente=<%=fabricanteCarro.presidente%>" method="post">
+
+    <label for="nfabricante">Nombre del fabricante</label>
+    <input id="nfabricante" type="text" name="nfabricante" value="<%=fabricanteCarro.nfabricante%>" readonly><br><br>
+
+    <label for="tipo">Tipo de fabricante</label>
+    <input id="tipo" type="text" name="tipo" value="<%=fabricanteCarro.tipo%>" readonly><br><br>
+
+    <label for="sede">Sede del fabricante</label>
+    <input id="sede" type="text" name="sede" value="<%=fabricanteCarro.sede%>" readonly><br><br>
+
+    <label for="presidente">Presidente del fabricante</label>
+    <input id="presidente" type="text" name="presidente" value="<%=fabricanteCarro.presidente%>" readonly><br><br>
+
+    <button type="submit">Eliminar</button>
+
+</form>
+
+<!-- PARA VOLVER A FABRICANTES -->
+<a href="/fabricanteCarro/fabricantesCarro">
+    <button>Cancelar</button>
+</a>

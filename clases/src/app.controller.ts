@@ -1,23 +1,83 @@
-import { Controller, ForbiddenException, Get, Session } from '@nestjs/common';
+import {
+  BadGatewayException,
+  BadRequestException, Body,
+  Controller,
+  ForbiddenException,
+  Get,
+  Param, Post, Query, Req,
+  Session
+} from '@nestjs/common';
 import { AppService } from './app.service';
+import {FormularioCrearDto} from "./dto/formulario-crear.dto";
+import {validate} from "class-validator";
 
 @Controller()
 export class AppController {
   constructor(private readonly appService: AppService) {}
+
+  /*SEGURIDAD, validacion*/
+  @Post('validacion-formulario')
+  async validacionFormulario(
+      @Body() parametrosCuerpo
+  ){
+    const dtoFormulario = new FormularioCrearDto()
+      dtoFormulario.nombre = parametrosCuerpo.nombre
+    dtoFormulario.cedula = parametrosCuerpo.cedula
+    dtoFormulario.correo = parametrosCuerpo.correo
+    dtoFormulario.edad = parametrosCuerpo.edad
+    dtoFormulario.soltero  = parametrosCuerpo.soltero
+
+    const errores = await validate(dtoFormulario);
+    if(errores.length > 0){
+      console.error(JSON.stringify(errores))
+      console.error(errores.toString())
+
+      throw new BadRequestException('No esta enviando correctamente los aprametros')
+    }else{
+      return 'ok'
+    }
+
+
+
+  }
+
+
+  /*SEGURIDAD*/
+
 
   @Get()
   getHello(): string {
     return this.appService.getHello();
   }
 
+  @Get('login')
+  login(
+      @Session() session,
+      //@Param() parametrosConsulta //para poder usar estos parametros. PARAMETROS DE RUTA
+      @Query() parametrosConsulta // PARÁMETROS DE CONSULTA
+  ): string {
+    if(parametrosConsulta.nombre && parametrosConsulta.apellido){//si me das el apellido y nombr.Si me das el nombre y apellido pues los guardo
+      session.usuario = {
+        nombre:parametrosConsulta.nombre,
+        apellido:parametrosConsulta.apellido
+      }
+      if(parametrosConsulta.apellido === 'Rivera'){
+        session.usuario.esAdministrador = true;
+      }
+      return 'El usuario se ha logueado';//te doy la mano
+    }else{
+      throw new BadRequestException('Usted no no está enviando el nombre y el apellido, perro')//400
+    }
+  }
+
   @Get('quien-soy')
   quienSoy(
       @Session() session,
   ): string {
-    if (session.usuario){
-      return session.usuario + '' + session.usuario.apellido;
+    if (session.usuario){//si el usuario se ha guardado
+      return session.usuario.nombre + ' ' + session.usuario.apellido;//devolvemos el nombre y apellido de quien se ha logueado
     } else {
-      return 'No te has logueado';
+      return 'No se ha logueado nadie, Julio';
     }
   }
 
@@ -25,11 +85,11 @@ export class AppController {
   protegido(
       @Session() session,
   ): string {
-    if (session.usuario){
-      if (session.esAdministrador){
-        return 'CONTENIDO SUPER OCULTO'
+    if (session.usuario){//verifico si hay login
+      if (session.usuario.esAdministrador){//verifico si se trata de un administrador
+        return 'CONTENIDO SUPER OCULTO'//muestro el contenido super secreto y apto solo pa los adminsitradores.
       } else {
-        throw new ForbiddenException('No tienes el rol de Admin.');
+        throw new ForbiddenException('No tienes el rol de Admin.');//puesto que es una ruta protegida, que salte un error.
       }
     } else {
       throw new ForbiddenException('No tienes el rol de Admin, colega.')
@@ -39,19 +99,22 @@ export class AppController {
   @Get('logout')
   logout(
       @Session() session,
+      @Req() request
   ): string {
-    if (session.usuario){
-      return session.usuario + '' + session.usuario.apellido;
-    } else {
-      return 'No te has logueado';
+    session.usuario = undefined;
+    request.session.destroy();
+    return 'Gracias por la visita.';
     }
-  }
+
 
 
 
 }
 
 
+
+
+/*
 //Clases - TYPESCRIPT
 
 abstract class Nombre{
@@ -243,5 +306,5 @@ if (undefined) {
 } else {
   console.log('Falsy');
 }
-
+*/
 

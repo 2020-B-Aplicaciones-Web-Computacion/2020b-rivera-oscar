@@ -1,0 +1,79 @@
+<% const nombre = 'Óscar Rivera' %>
+<% const titulo = 'MODELOS' %>
+
+<h1><%= nombre %></h1>
+<h1><%= titulo %></h1>
+
+
+
+<style>
+    .mensaje{
+        border: solid 1px #c3a062;
+        width: 100%;
+        margin: 10px;
+    }
+</style>
+
+
+<% if(parametrosConsulta.mensaje){ %>
+    <div class="mensaje">
+        <%= parametrosConsulta.mensaje %>
+    </div>
+<% }%>
+
+
+
+
+<!-- PARA CREAR UN MODELO -->
+<a href="/modeloCarro/crear-modeloCarro?">
+    <button>CREAR MODELO</button>
+</a><br><br>
+<!-- RECARGAR MODELOS -->
+<a href="/modeloCarro/modelosCarro">
+    <button>RECARGAR</button>
+</a><br><br>
+
+
+<!-- PARA BUSCAR UN MODELO -->
+<form action="/modeloCarro/modelosCarro" method="get">
+    <label for="busqueda">Búsqueda</label>
+    <input id="busqueda" type="text" name="busqueda">
+
+    <button type="submit">
+        Buscar
+    </button>
+</form>
+
+<!-- VISUALIZACIÓN DE REGISTROS DE MODELOS -->
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Nombre del modelo</th>
+        <th>Precio del modelo</th>
+        <th>Año del modelo</th>
+        <th>Puertas del modelo</th>
+    </tr>
+    <% for (let modeloCarro of datos[0]){ %>
+        <tr>
+            <td><%= modeloCarro.id %></td>
+            <td><%= modeloCarro.nmodelo %></td>
+            <td><%= modeloCarro.precio %></td>
+            <td><%= modeloCarro.anio %></td>
+            <td><%= modeloCarro.puertas %></td>
+            <td>
+                <a href="/modeloCarro/eliminar-modeloCarro?id=<%=modeloCarro.id%>">
+                    <button>Eliminar</button>
+                </a>
+                <a href="/modeloCarro/editar-modeloCarro?id=<%=modeloCarro.id%>">
+                <button>Editar</button>
+                </a>
+            </td>
+        </tr>
+    <% } %>
+</table>
+<p>Numero total de registros: <%= datos[1]%></p></a><br>
+
+<!-- PARA VOLVER A FABRICANTES -->
+<a href="/fabricanteCarro/fabricantesCarro">
+    <button>VOLVER A FABRICANTES</button>
+</a>

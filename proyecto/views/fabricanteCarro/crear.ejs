@@ -1,0 +1,39 @@
+<h1>CREE UN FABRICANTE</h1>
+<style>
+    .mensaje{
+        border: solid 1px #c3a062;
+        width: 100%;
+        margin: 10px;
+    }
+</style>
+
+
+<% if(parametrosConsulta.mensaje){ %>
+    <div class="mensaje">
+        <%= parametrosConsulta.mensaje %>
+    </div>
+<% }%>
+
+
+<form action="/fabricanteCarro/crear-fabricanteCarro" method="post">
+    <label for="nfabricante">Nombre del fabricante</label>
+    <input id="nfabricante" type="text" name="nfabricante"><br><br>
+
+    <label for="tipo">Tipo de fabricante</label>
+    <input id="tipo" type="text" name="tipo"><br><br>
+
+    <label for="sede">Sede del fabricante</label>
+    <input id="sede" type="text" name="sede"><br><br>
+
+    <label for="presidente">Presidente del fabricante</label>
+    <input id="presidente" type="text" name="presidente"><br><br>
+
+    <button type="submit">Crear</button>
+    <button type="reset">Limpiar</button>
+</form>
+<a href="/fabricanteCarro/fabricantesCarro">
+    <button>Cancelar</button>
+</a>
+
+
+

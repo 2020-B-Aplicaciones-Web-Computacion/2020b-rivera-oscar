@@ -1,0 +1,76 @@
+<% const nombre = 'Óscar Rivera' %>
+<% const titulo = 'Proyecto de Aplicaciones Web. Fabricante - Modelo de carros.' %>
+
+<h1><%= nombre %></h1>
+<h1><%= titulo %></h1>
+
+
+
+<style>
+    .mensaje{
+        border: solid 1px #c3a062;
+        width: 100%;
+        margin: 10px;
+    }
+</style>
+
+
+<% if(parametrosConsulta.mensaje){ %>
+    <div class="mensaje">
+        <%= parametrosConsulta.mensaje %>
+    </div>
+<% }%>
+
+
+
+
+<!-- PARA CREAR UN USUARIO -->
+<a href="/fabricanteCarro/crear-fabricanteCarro">
+    <button>CREAR FABRICANTE</button>
+</a><br><br>
+<!-- RECARGAR FABRICANTES -->
+<a href="/fabricanteCarro/fabricantesCarro">
+    <button>RECARGAR</button>
+</a><br><br>
+
+<!-- PARA BUSCAR UN USUARIO -->
+<form action="/fabricanteCarro/fabricantesCarro" method="get">
+    <label for="busqueda">Búsqueda</label>
+    <input id="busqueda" type="text" name="busqueda">
+
+    <button type="submit">
+        Buscar
+    </button>
+</form>
+
+<!-- VISUALIZACIÓN DE REGISTROS DE USUARIO -->
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Nombre de fabricante</th>
+        <th>Tipo de fabricante</th>
+        <th>Sede de fabricante</th>
+        <th>Presidente de fabricante</th>
+    </tr>
+    <% for (let fabricanteCarro of datos[0]){ %>
+        <tr>
+            <td><%= fabricanteCarro.id %></td>
+            <td><%= fabricanteCarro.nfabricante %></td>
+            <td><%= fabricanteCarro.tipo %></td>
+            <td><%= fabricanteCarro.sede %></td>
+            <td><%= fabricanteCarro.presidente %></td>
+            <td>
+                <a href="/fabricanteCarro/eliminar-fabricanteCarro?id=<%=fabricanteCarro.id%>&nfabricante=<%=fabricanteCarro.nfabricante%>&tipo=<%=fabricanteCarro.tipo%>&sede=<%=fabricanteCarro.sede%>&presidente=<%=fabricanteCarro.presidente%>">
+                    <button>Eliminar</button>
+                </a>
+                <a href="/fabricanteCarro/editar-fabricanteCarro?id=<%=fabricanteCarro.id%>">
+                <button>Editar</button>
+                </a>
+                <a href="/modeloCarro/modelosCarro?id=<%=fabricanteCarro.id%>">
+                    <button>Modelos</button>
+                </a>
+            </td>
+        </tr>
+    <% } %>
+</table>
+<p>Numero total de registros: <%= datos[1]%></p>

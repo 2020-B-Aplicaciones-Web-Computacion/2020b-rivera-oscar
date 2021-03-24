@@ -1,0 +1,24 @@
+<h1><%= '¿ESTÁ SEGURO QUE QUIERE ELIMINAR EL SIGUIENTE MODELO?' %></h1>
+
+
+<form action="/modeloCarro/eliminar-modeloCarro?id=<%=modeloCarro.id%>&nmodelo=<%=modeloCarro.nmodelo%>&precio=<%=modeloCarro.precio%>&anio=<%=modeloCarro.anio%>&puertas=<%=modeloCarro.puertas%>" method="post">
+
+    <label for="nmodelo">Nombre del modelo</label>
+    <input id="nmodelo" type="text" name="nmodelo" value="<%=modeloCarro.nmodelo%>" readonly><br><br>
+
+
+    <label for="precio">Precio del modelo</label>
+    <input id="precio" type="text" name="precio" value="<%=modeloCarro.precio%>" readonly><br><br>
+
+    <label for="anio">Año de lanzamiento</label>
+    <input id="anio" type="text" name="anio" value="<%=modeloCarro.anio%>" readonly><br><br>
+
+    <label for="puertas">Numero de puertas</label>
+    <input id="puertas" type="text" name="puertas" value="<%=modeloCarro.puertas%>" readonly><br><br>
+
+    <button type="submit">Eliminar modelo</button>
+</form>
+<!-- PARA VOLVER A MODELOS -->
+<a href="/modeloCarro/modelosCarro">
+    <button>Cancelar</button>
+</a>

@@ -1,0 +1,70 @@
+
+<% const arreglo = [1, 2, 3, 4, 5] //Se puede escribir Javascript dentro de HTML, guao!  %>
+<% const nombre = 'Visualización de los datos. Oscar.' %>
+<% const numeroTitulo = 1 + 10 %>
+<h1><%= nombre %> - <%= numeroTitulo %></h1>
+<ul>
+    <% for(let numero of arreglo){ %>
+        <li>Numero: <%= numero %></li>
+    <% } %>
+</ul>
+
+
+<style>
+    .mensaje{
+        border: solid 1px #c3a062;
+        width: 100%;
+        margin: 10px;
+    }
+</style>
+
+
+<% if(parametrosConsulta.mensaje){ %>
+    <div class="mensaje">
+        <%= parametrosConsulta.mensaje %>
+    </div>
+<% }%>
+
+
+
+
+<!-- PARA CREAR UN USUARIO -->
+<a href="/usuario/crear-usuario">
+    <button>CREAR</button>
+</a>
+
+<!-- PARA BUSCAR UN USUARIO -->
+<form action="/usuario/usuarios" method="get">
+    <label for="busqueda">Búsqueda</label>
+    <input id="busqueda" type="text" name="busqueda">
+
+    <button type="submit">
+        Buscar
+    </button>
+</form>
+
+<!-- VISUALIZACIÓN DE REGISTROS DE USUARIO -->
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Acciones</th>
+    </tr>
+    <% for (let usuario of datos[0]){ %>
+        <tr>
+            <td><%= usuario.id %></td>
+            <td><%= usuario.nombre %></td>
+            <td><%= usuario.apellido %></td>
+            <td>
+                <a href="/usuario/eliminar-usuario?id=<%=usuario.id%>&nombre=<%=usuario.nombre%>&apellido=<%=usuario.apellido%>">
+                    <button>Eliminar</button>
+                </a>
+                <a href="/usuario/editar-usuario?id=<%=usuario.id%>&nombre=<%=usuario.nombre%>&apellido=<%=usuario.apellido%>">
+                <button>Editar</button>
+                </a>
+            </td>
+        </tr>
+    <% } %>
+</table>
+<p>Numero total de registros: <%= datos[1]%></p>

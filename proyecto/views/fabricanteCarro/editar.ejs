@@ -1,0 +1,37 @@
+<h1><%= 'EDITE EL SIGUIENTE FABRICANTE' %></h1>
+
+
+
+<form action="/fabricanteCarro/editar-fabricanteCarro?id=<%=fabricanteCarro.id%>&nfabricante=<%=fabricanteCarro.nfabricante%>&tipo=<%=fabricanteCarro.tipo%>&sede=<%=fabricanteCarro.sede%>&presidente=<%=fabricanteCarro.presidente%>" method="post">
+    <style>
+        .mensaje{
+            border: solid 1px #c3a062;
+            width: 100%;
+            margin: 10px;
+        }
+    </style>
+
+
+    <% if(parametrosConsulta.mensaje){ %>
+        <div class="mensaje">
+            <%= parametrosConsulta.mensaje %>
+        </div>
+    <% }%>
+    <label for="nfabricante">Nombre del fabricante</label>
+    <input id="nfabricante" type="text" name="nfabricante" value="<%=fabricanteCarro.nfabricante%>"><br><br>
+
+    <label for="tipo">Tipo de fabricante</label>
+    <input id="tipo" type="text" name="tipo" value="<%=fabricanteCarro.tipo%>"><br><br>
+
+    <label for="sede">Sede del fabricante</label>
+    <input id="sede" type="text" name="sede" value="<%=fabricanteCarro.sede%>"><br><br>
+
+    <label for="presidente">Presidente del fabricante</label>
+    <input id="presidente" type="text" name="presidente" value="<%=fabricanteCarro.presidente%>"><br><br>
+
+    <button type="submit">Editar fabricante</button>
+</form>
+<!-- PARA VOLVER A FABRICANTES -->
+<a href="/fabricanteCarro/fabricantesCarro">
+    <button>Cancelar edición</button>
+</a>
